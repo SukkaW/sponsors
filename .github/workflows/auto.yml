@@ -16,7 +16,7 @@ jobs:
   update-sponsors:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -33,22 +33,12 @@ jobs:
           SPONSORKIT_AFDIAN_TOKEN: ${{ secrets.SPONSORKIT_AFDIAN_TOKEN }}
       - name: List files
         run: ls -l public
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: 'public'
-
-  deploy:
-    needs: update-sponsors
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GIT_DEPLOY_TOKEN }}
+          user_name: ${{ secrets.GIT_DEPLOY_USER }}
+          user_email: ${{ secrets.GIT_DEPLOY_EMAIL }}
+          publish_branch: gh-pages
+          publish_dir: public
+          cname: sponsor.cdn.skk.moe
