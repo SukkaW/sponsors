@@ -11,6 +11,10 @@ on:
 jobs:
   update-sponsors:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
@@ -30,5 +34,3 @@ jobs:
         with:
           message: 'chore: update sponsors assets'
           add: 'sponsors.*'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
