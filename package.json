@@ -2,7 +2,7 @@
   "name": "@sukka/sponsors",
   "private": true,
   "scripts": {
-    "build": "bun run --bun sponsorkit --dir=. -w=800 && bun run --bun sponsorkit --dir=. -w=1800 --name=sponsors.wide && bun run --bun sponsorkit --dir=. -w=800 --name=sponsors.part1 --filter='>=9.9' && bun run --bun sponsorkit --dir=. -w=800 --name=sponsors.part2 --filter='<9.9'"
+    "build": "bun run --bun sponsorkit --dir=public -w=800 && bun run --bun sponsorkit --dir=public -w=1800 --name=sponsors.wide && bun run --bun sponsorkit --dir=public -w=800 --name=sponsors.part1 --filter='>=9.9' && bun run --bun sponsorkit --dir=public -w=800 --name=sponsors.part2 --filter='<9.9'"
   },
   "devDependencies": {
     "@eslint-sukka/node": "^5.1.2",
