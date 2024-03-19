@@ -1,6 +1,6 @@
 # SponsorKit special
 .cache.json
-sponsors.*.json
+public
 
 # Based on https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
 
