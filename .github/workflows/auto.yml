@@ -41,4 +41,5 @@ jobs:
           user_email: ${{ secrets.GIT_DEPLOY_EMAIL }}
           publish_branch: gh-pages
           publish_dir: public
+          exclude_assets: '.cache.json'
           cname: sponsor.cdn.skk.moe
