@@ -13,10 +13,10 @@ export default defineConfig({
       monthlyDollars: -1,
       preset: {
         avatar: {
-          size: 16
+          size: 14
         },
-        boxWidth: 18,
-        boxHeight: 18,
+        boxWidth: 16,
+        boxHeight: 16,
         container: {
           sidePadding: 24
         }
@@ -28,13 +28,10 @@ export default defineConfig({
         avatar: {
           size: 36
         },
-        boxWidth: 38,
-        boxHeight: 38,
+        boxWidth: 42,
+        boxHeight: 42,
         container: {
-          sidePadding: 30
-        },
-        name: {
-          maxLength: 10
+          sidePadding: 24
         }
       }
     },
@@ -45,11 +42,17 @@ export default defineConfig({
         avatar: {
           size: 42
         },
-        boxWidth: 52,
-        boxHeight: 52,
+        boxWidth: 64,
+        boxHeight: 64,
         container: {
-          sidePadding: 30
+          sidePadding: 36
+        },
+        name: {
+          maxLength: 10
         }
+      },
+      composeAfter(composer) {
+        composer.addSpan(10);
       }
     },
     {
