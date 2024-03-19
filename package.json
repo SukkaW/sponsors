@@ -1,0 +1,16 @@
+{
+  "name": "@sukka/sponsors",
+  "private": true,
+  "scripts": {
+    "build": "sponsorkit --dir=. -w=800 && sponsorkit --dir=. -w=1800 --name=sponsors.wide && sponsorkit --dir=. -w=800 --name=sponsors.part1 --filter='>=9.9' && sponsorkit --dir=. -w=800 --name=sponsors.part2 --filter='<9.9'"
+  },
+  "devDependencies": {
+    "@eslint-sukka/node": "^5.1.2",
+    "@eslint-sukka/ts": "^5.1.2",
+    "@types/bun": "^1.0.8",
+    "eslint": "^8.57.0",
+    "eslint-config-sukka": "^5.1.2",
+    "sponsorkit": "^0.9.1",
+    "typescript": "^5.4.2"
+  }
+}
