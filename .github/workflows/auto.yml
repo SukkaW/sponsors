@@ -31,6 +31,8 @@ jobs:
           SPONSORKIT_GITHUB_LOGIN: ${{ secrets.SPONSORKIT_GITHUB_LOGIN }}
           SPONSORKIT_AFDIAN_USER_ID: ${{ secrets.SPONSORKIT_AFDIAN_USER_ID }}
           SPONSORKIT_AFDIAN_TOKEN: ${{ secrets.SPONSORKIT_AFDIAN_TOKEN }}
+      - name: List files
+        run: ls -l public
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
