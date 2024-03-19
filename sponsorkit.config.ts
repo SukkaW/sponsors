@@ -1,17 +1,5 @@
-import type { BadgePreset } from 'sponsorkit';
 import { defineConfig, presets } from 'sponsorkit';
 import { getCurrentUSD2CNH } from './latest-currency' with { type: 'macro' }; // macro import
-
-const past: BadgePreset = {
-  avatar: {
-    size: 16
-  },
-  boxWidth: 18,
-  boxHeight: 18,
-  container: {
-    sidePadding: 24
-  }
-};
 
 const exechangeRate = getCurrentUSD2CNH() as any as number; // macro usage
 
@@ -23,11 +11,32 @@ export default defineConfig({
     {
       title: 'Past Sponsors',
       monthlyDollars: -1,
-      preset: past
+      preset: {
+        avatar: {
+          size: 16
+        },
+        boxWidth: 18,
+        boxHeight: 18,
+        container: {
+          sidePadding: 24
+        }
+      }
     },
     {
       title: 'Backers',
-      preset: presets.small
+      preset: {
+        avatar: {
+          size: 36
+        },
+        boxWidth: 38,
+        boxHeight: 38,
+        container: {
+          sidePadding: 30
+        },
+        name: {
+          maxLength: 10
+        }
+      }
     },
     {
       title: 'Sponsors',
