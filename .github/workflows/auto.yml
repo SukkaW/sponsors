@@ -5,7 +5,8 @@ on:
   schedule:
     - cron: '0 0 * * *'
   push:
-    branches: [ master ]
+    branches:
+      - master
 
 jobs:
   update-sponsors:
@@ -13,15 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set node
-        uses: actions/setup-node@v3
+      - uses: oven-sh/setup-bun@v1
         with:
-          node-version: lts/*
-
-      - run: npx pnpm i
-
+          bun-version: latest
+      - run: bun i
       - name: Update sponsors
-        run: npm run build
+        run: bun run build
         env:
           SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
           SPONSORKIT_GITHUB_LOGIN: ${{ secrets.SPONSORKIT_GITHUB_LOGIN }}

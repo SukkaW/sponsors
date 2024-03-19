@@ -1,5 +1,6 @@
 import type { BadgePreset } from 'sponsorkit';
 import { defineConfig, presets } from 'sponsorkit';
+import { getCurrentUSD2CNH } from './latest-currency' with { type: 'macro' }; // macro import
 
 const past: BadgePreset = {
   avatar: {
@@ -12,7 +13,12 @@ const past: BadgePreset = {
   }
 };
 
+const exechangeRate = getCurrentUSD2CNH() as any as number; // macro usage
+
 export default defineConfig({
+  afdian: {
+    exechangeRate
+  },
   tiers: [
     {
       title: 'Past Sponsors',
