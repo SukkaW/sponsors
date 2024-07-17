@@ -1,4 +1,4 @@
-import { defineConfig, presets } from 'sponsorkit';
+import { defineConfig, tierPresets } from 'sponsorkit';
 import { getCurrentUSD2CNH } from './latest-currency' with { type: 'macro' }; // macro import
 
 const exechangeRate = getCurrentUSD2CNH() as any as number; // macro usage
@@ -58,17 +58,17 @@ export default defineConfig({
     {
       title: 'Silver Sponsors',
       monthlyDollars: 100,
-      preset: presets.medium
+      preset: tierPresets.medium
     },
     {
       title: 'Gold Sponsors',
       monthlyDollars: 300,
-      preset: presets.large
+      preset: tierPresets.large
     },
     {
       title: 'Platinum Sponsors',
       monthlyDollars: 500,
-      preset: presets.xl
+      preset: tierPresets.xl
     }
     // {
     //   title: 'Special Sponsor',
