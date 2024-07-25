@@ -1,6 +1,7 @@
 import retry from 'async-retry';
+import { runAsWorker } from 'synckit';
 
-export const getCurrentUSD2CNH = () => retry(async () => {
+runAsWorker(() => retry(async () => {
   const json = await (
     await fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json')
   ).json();
@@ -16,4 +17,4 @@ export const getCurrentUSD2CNH = () => retry(async () => {
   }
   console.log('Current USD to CNH exchange rate:', json.usd.cnh);
   return json.usd.cnh;
-}, { retries: 10 });
+}, { retries: 10 }));

@@ -1,7 +1,13 @@
 import { defineConfig, tierPresets } from 'sponsorkit';
-import { getCurrentUSD2CNH } from './latest-currency' with { type: 'macro' }; // macro import
+import { createSyncFn } from 'synckit';
 
-const exechangeRate = getCurrentUSD2CNH() as any as number; // macro usage
+const getCurrentUSD2CNH = createSyncFn(require.resolve('./latest-currency.ts'), {
+  tsRunner: 'swc',
+  globalShims: []
+});
+const exechangeRate = getCurrentUSD2CNH() as number;
+
+console.log({ exechangeRate });
 
 export default defineConfig({
   afdian: {
