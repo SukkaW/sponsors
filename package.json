@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint --format=sukka .",
-    "build": "sponsorkit --dir=public -w=800 && sponsorkit --dir=public -w=1800 --name=sponsors.wide && sponsorkit --dir=public -w=800 --name=sponsors.part1 --filter='>=9.9' && sponsorkit --dir=public -w=800 --name=sponsors.part2 --filter='<9.9'"
+    "build": "sponsorkit"
   },
   "dependencies": {
     "synckit": "^0.9.1"

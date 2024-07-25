@@ -1,9 +1,9 @@
 import { defineConfig, tierPresets } from 'sponsorkit';
-import { createSyncFn } from 'synckit';
+import { createSyncFn, TsRunner } from 'synckit';
+import path from 'path';
 
-const getCurrentUSD2CNH = createSyncFn(require.resolve('./latest-currency.ts'), {
-  tsRunner: 'swc',
-  globalShims: []
+const getCurrentUSD2CNH = createSyncFn(path.resolve('./latest-currency.ts'), {
+  tsRunner: TsRunner.SWC
 });
 const exechangeRate = getCurrentUSD2CNH() as number;
 
@@ -89,5 +89,31 @@ export default defineConfig({
     //     }
     //   }
     // }
+  ],
+  formats: ['svg', 'png'],
+  outputDir: './public',
+  renders: [
+    {
+      width: 800
+    },
+    {
+      width: 1800,
+      name: 'sponsors.wide'
+    },
+
+    {
+      width: 800,
+      name: 'sponsors.part1',
+      filter({ monthlyDollars }) {
+        return monthlyDollars >= 9.9;
+      }
+    },
+    {
+      width: 800,
+      name: 'sponsors.part2',
+      filter({ monthlyDollars }) {
+        return monthlyDollars < 9.9;
+      }
+    }
   ]
 });
