@@ -1,6 +1,6 @@
 import { defineConfig, tierPresets } from 'sponsorkit';
 import { createSyncFn, TsRunner } from 'synckit';
-import path from 'path';
+import path from 'node:path';
 
 const getCurrentUSD2CNH = createSyncFn(path.resolve('./latest-currency.ts'), {
   tsRunner: TsRunner.SWC
