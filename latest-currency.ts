@@ -1,7 +1,7 @@
-import retry from 'async-retry';
+import { asyncRetry } from 'foxts/async-retry';
 import { runAsWorker } from 'synckit';
 
-runAsWorker(() => retry(async () => {
+runAsWorker(() => asyncRetry(async () => {
   const json = await (
     await fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json')
   ).json();
