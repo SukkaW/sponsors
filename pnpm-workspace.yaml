@@ -1,4 +1,6 @@
 onlyBuiltDependencies:
+  - '@swc/core'
   - sharp
+
 overrides:
-  "eslint>chalk": "npm:picocolors@^1.1.1"
+  eslint>chalk: npm:picocolors@^1.1.1
