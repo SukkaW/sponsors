@@ -14,24 +14,22 @@ concurrency:
 
 jobs:
   update-sponsors:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     permissions:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
             run_install: false
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
       - run: pnpm install
-      - name: Update sponsors
-        run: pnpm run build
+      - run: pnpm run build
         env:
           SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
           SPONSORKIT_GITHUB_LOGIN: ${{ secrets.SPONSORKIT_GITHUB_LOGIN }}
