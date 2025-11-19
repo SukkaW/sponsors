@@ -35,8 +35,8 @@ jobs:
           SPONSORKIT_GITHUB_LOGIN: ${{ secrets.SPONSORKIT_GITHUB_LOGIN }}
           SPONSORKIT_AFDIAN_USER_ID: ${{ secrets.SPONSORKIT_AFDIAN_USER_ID }}
           SPONSORKIT_AFDIAN_TOKEN: ${{ secrets.SPONSORKIT_AFDIAN_TOKEN }}
-      - name: List files
-        run: ls -l public
+      # - name: List files
+      #   run: ls -l public
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
