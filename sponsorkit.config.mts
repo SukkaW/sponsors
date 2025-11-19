@@ -5,9 +5,9 @@ import path from 'node:path';
 const getCurrentUSD2CNH = createSyncFn(path.resolve('./latest-currency.ts'), {
   tsRunner: TsRunner.SWC
 });
-const exechangeRate = getCurrentUSD2CNH() as number;
+const exchangeRate = getCurrentUSD2CNH() as number;
 
-console.log({ exechangeRate });
+console.log({ exchangeRate });
 
 function VERCEL_LOGO(width: number, y: number) {
   return `
@@ -19,7 +19,7 @@ function VERCEL_LOGO(width: number, y: number) {
 
 export default defineConfig({
   afdian: {
-    exechangeRate
+    exchangeRate
   },
   tiers: [
     {
