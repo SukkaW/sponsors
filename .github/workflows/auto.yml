@@ -21,13 +21,19 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
+        id: setup_pnpm
+        background: true
         with:
           run_install: false
           cache: true
       - uses: actions/setup-node@v6
+        id: setup_node
+        background: true
         with:
           node-version-file: ".node-version"
           package-manager-cache: false
+      - wait: [setup_pnpm, setup_node]
+      - run: pnpm config set --location=global minimumReleaseAge 0
       - run: pnpm install
       - run: pnpm run build
         env:
