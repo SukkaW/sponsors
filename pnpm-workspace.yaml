@@ -1,6 +1,4 @@
-onlyBuiltDependencies:
-  - '@swc/core'
-  - sharp
-
-overrides:
-  eslint>chalk: npm:picocolors@^1.1.1
+allowBuilds:
+  "@swc/core": true
+  sharp: true
+  unrs-resolver: true
