@@ -29,7 +29,7 @@ function HeyApiLogo(width: number, y: number) {
   return svg`
 <a xlink:href="https://heyapi.dev" class="sponsorkit-link" target="_blank" id="HeyAPI">
   <svg width="${HEY_API_LOGO_WIDTH}" height="${HEY_API_LOGO_HEIGHT}" viewBox="0 0 307 82" x="${(width - HEY_API_LOGO_WIDTH) / 2}" y="${y}" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="307" height="82" rx="6" fill="white"/>
+  <rect x="0.75" y="0.75" width="305.5" height="80.5" rx="5.5" fill="white" stroke="#d8d8dc" stroke-width="1.5"/>
   <g transform="translate(42 13) scale(0.0755) translate(-155 -160)">
     <path fill="#3c3c43" d="${HEY_API_ICON}"/>
   </g>
