@@ -6,19 +6,19 @@
     "build": "sponsorkit"
   },
   "dependencies": {
-    "foxts": "^5.9.0",
-    "synckit": "^0.11.13"
+    "foxts": "^5.9.1",
+    "synckit": "^0.12.3"
   },
   "devDependencies": {
-    "@eslint-sukka/node": "^8.15.0",
+    "@eslint-sukka/node": "^9.2.1",
     "@swc-node/register": "^1.12.1",
-    "@swc/core": "^1.15.47",
-    "@types/node": "^26.2.0",
-    "eslint": "^10.8.1",
-    "eslint-config-sukka": "^8.15.0",
-    "eslint-formatter-sukka": "^8.15.0",
-    "sponsorkit": "^17.1.1",
+    "@swc/core": "^1.16.20",
+    "@types/node": "^26.6.5",
+    "eslint": "^10.13.0",
+    "eslint-config-sukka": "^9.2.1",
+    "eslint-formatter-sukka": "^9.2.1",
+    "sponsorkit": "^19.0.0",
     "typescript": "^6.0.3"
   },
-  "packageManager": "pnpm@11.20.0"
+  "packageManager": "pnpm@11.28.8"
 }
